@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Display listening ports with PID and Program name
 netstat -tulnep | awk '$6 == "LISTEN" {print $4, $9}' | while read -r line; do
     ip_port=$(echo "$line" | awk '{print $1}')
